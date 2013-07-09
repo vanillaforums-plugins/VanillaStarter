@@ -24,7 +24,7 @@ https://github.com/vanillaforums/Addons/tree/master/plugins/Example
 $PluginInfo['VanillaStarter'] = array(
    'Description' => 'Quick start a new plugin development.',
    'Version' => '0.1',
-   'RequiredApplications' => array('Vanilla' => '2.0.18.4'),
+   'RequiredApplications' => array('Vanilla' => '2.1a1'),
    'RequiredTheme' => FALSE, 
    'RequiredPlugins' => FALSE,
    //if you plugin rely on other plugins, replace the above line with the below
@@ -157,6 +157,27 @@ class VanillaStarterPlugin extends Gdn_Plugin {
       $Menu->AddLink('Add-ons', 'Example', 'plugin/example', 'Garden.AdminUser.Only');
    }
    
+  /**
+  * Add fields to registration forms.
+  */
+  public function EntryController_RegisterBeforePassword_Handler($Sender) {
+    /* See 
+     * https://github.com/vanillaforums/Garden/blob/master/plugins/ProfileExtender/class.profileextender.plugin.php
+     * for an extended example
+     */
+  }
+
+  /**
+  * Required fields on registration forms.
+  */
+  public function EntryController_RegisterValidation_Handler($Sender) {
+    /* See 
+     * https://github.com/vanillaforums/Garden/blob/master/plugins/ProfileExtender/class.profileextender.plugin.php
+     * for an extended example
+     */
+  }
+   
+
    /**
     * Hook into the rendering of each discussion link
     *
