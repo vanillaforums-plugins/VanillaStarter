@@ -16,8 +16,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with VanillaStarter. If not, see <http://www.gnu.org/licenses/>.
 
-Based on the Vanilla Forums Example plugin, released under the GPL3 ora any later version.
-https://github.com/vanillaforums/Addons/tree/master/plugins/Example
+Based on the Vanilla Forums Example plugin, released under the GPL3 or (at your option) any later version.
+<https://github.com/vanillaforums/Addons/tree/master/plugins/Example>
 */
 
 // Define the plugin:
