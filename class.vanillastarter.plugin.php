@@ -22,7 +22,7 @@ Based on the Vanilla Forums Example plugin, released under the GPL3 or (at your 
 
 // Define the plugin:
 $PluginInfo['VanillaStarter'] = array(
-	'Name' => 'Woochbase',
+	'Name' => 'Vanilla Starter',
 	'Description' => 'Quick start a new plugin development.',
 	'Version' => '0.1',
 	'RequiredApplications' => array('Vanilla' => '2.1a1'),
