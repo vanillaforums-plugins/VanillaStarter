@@ -74,7 +74,7 @@ class VanillaStarterPlugin extends Gdn_Plugin {
 	* URL: http://www.yourforum.com/plugin/Example/
 	*
 	* From here, we can do whatever we like, including turning this plugin into a mini controller and
-	* allowing us an easy way of creating a dashboard settings screen.
+	* allowing us an easy way of creating a dashboard settings screen or custom plugin action.
 	*
 	* @param $Sender Sending controller instance
 	*/
@@ -102,10 +102,15 @@ class VanillaStarterPlugin extends Gdn_Plugin {
 	 *
 	 * Note: When the URL is accessed without parameters, Controller_Index() is called. This is a good place
 	 * for a dashboard settings screen.
+	 *
+	 * Note: Every request like http://www.yourforum.com/plugin/Example/YOUR_ACTION_NAME
+	 * will executi this function before the dedicated Controller_YOUR_ACTION_NAME() function.
+	 * Good place to add global permission checks 
 	 */
-	$this->Dispatch($Sender, $Sender->RequestArgs);
+	$this->Dispatch($Sender, $Sender->RequestArgs); //enable the mini controller functionality
 	}
 
+	//dispatched from http://www.yourforum.com/plugin/Example
 	public function Controller_Index($Sender) {
 		// Prevent non-admins from accessing this page
 		$Sender->Permission('Garden.Settings.Manage');
@@ -141,6 +146,16 @@ class VanillaStarterPlugin extends Gdn_Plugin {
 
 		// GetView() looks for files inside plugins/PluginFolderName/views/ and returns their full path. Useful!
 		$Sender->Render($this->GetView('example.php'));
+	}
+
+	//dispatched from http://www.yourforum.com/plugin/Example/AnotherAction
+	public function Controller_AnotherAction($Sender){
+
+	}
+
+	//dispatched from http://www.yourforum.com/plugin/Example/MyGreatAction
+	public function Controller_MyGreatAction($Sender){
+
 	}
 
 	/**
