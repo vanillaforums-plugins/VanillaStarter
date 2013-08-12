@@ -11,7 +11,7 @@ curl -L -o vanilla_starter.zip https://github.com/lifeisfoo/VanillaStarter/archi
 unzip vanilla_starter.zip
 ```
 2. Customize it
-  1. mv VanillaStarter MyPluginName
+  1. mv VanillaStarter-master MyPluginName
   2. mv MyPluginName/class.vanillastarter.plugin.php MyPluginName/class.mypluginame.plugin.php
   3. change ```$PluginInfo['VanillaStarter'] = array(``` to ```$PluginInfo['MyPluginName'] = array(```
   4. change ```class VanillaStarterPlugin extends Gdn_Plugin {``` to ```class MyPluginNamePlugin extends Gdn_Plugin {```
