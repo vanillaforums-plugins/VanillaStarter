@@ -2,6 +2,7 @@
 echo "Downloading skeleton..."
 curl -sL -o vanilla_starter.zip https://github.com/lifeisfoo/VanillaStarter/archive/master.zip
 unzip vanilla_starter.zip
+rm vanilla_starter.zip
 echo "Please enter plugin name (whitespaces accepted): "
 read PLUGIN_NAME
 TRIMMED_NAME=$(echo $PLUGIN_NAME | tr -d ' ')
