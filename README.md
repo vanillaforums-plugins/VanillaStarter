@@ -1,5 +1,8 @@
 # VanillaStarter plugin for Vanilla Forums
-Fork this repository and start writing your own plugin. Batteries included.
+Fork this repository (or follow the quickstart below) and start writing your own plugin. Batteries included.
+
+##### Note
+If you fork it to develop your plugin, remember to remove (this) origin repository ```git remote rm origin```.
 
 ## Quickstart
 1. Download it
