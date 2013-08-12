@@ -5,9 +5,17 @@ Fork this repository (or follow the quickstart below) and start writing your own
 If you fork it to develop your plugin, remember to remove (this) origin repository ```git remote rm origin```.
 
 ## Quickstart
-1. Download it
+
+Run from terminal
+```sh
+source <(curl -sL https://raw.github.com/lifeisfoo/VanillaStarter/script/start.sh)
 ```
-curl -L -o vanilla_starter.zip https://github.com/lifeisfoo/VanillaStarter/archive/master.zip
+and start writing code!
+
+### Alternate method
+1. Download it
+```sh
+curl -L -o vanilla_starter.zip https://github.com/lifeisfoo/VanillaStarter/archive/master.zip;
 unzip vanilla_starter.zip
 ```
 2. Customize it
