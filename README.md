@@ -33,3 +33,7 @@ Requires Vanilla >= 2.0.18.4
 
 ##Author and License
 Alessandro Miliucci, GPL v3
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lifeisfoo/VanillaStarter/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
