@@ -283,10 +283,18 @@ class VanillaStarterPlugin extends Gdn_Plugin {
 	 * perform cleanup tasks such as deletion of unsued files and folders.
 	 */
 	public function OnDisable() {
+		// Optional. Delete this if you don't need it.
 		RemoveFromConfig('Plugin.Example.TrimSize');
 		RemoveFromConfig('Plugin.Example.RenderCondition');
 		$this->_SetRoutes(TRUE);
 	}
+	
+        /**
+	 * Special function automatically run upon clicking 'Remove' on your application.
+         */
+    	public function CleanUp() {
+        	// Optional. Delete this if you don't need it.
+    	}
 	
 	/* SUPPORT FUNCTIONS */
 	
