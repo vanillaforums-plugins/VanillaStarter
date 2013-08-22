@@ -31,6 +31,7 @@ $PluginInfo['VanillaStarter'] = array(
 	//if you plugin rely on other plugins, replace the above line with the below
 	//'RequiredPlugins' => array('AnotherPlugin' => '0.1', 'SuperPlugin' => '1.3'),
 	'HasLocale' => FALSE,
+	'MobileFriendly' => TRUE, // if FALSE this plugin hooks will not be executed when browsing from mobile
 	'SettingsUrl' => '/plugin/example',
 	'SettingsPermission' => 'Garden.AdminUser.Only',
 	'Author' => "Alessandro Miliucci",
