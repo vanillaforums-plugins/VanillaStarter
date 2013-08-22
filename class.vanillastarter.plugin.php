@@ -288,6 +288,8 @@ class VanillaStarterPlugin extends Gdn_Plugin {
 		$this->_SetRoutes(TRUE);
 	}
 	
+	/* SUPPORT FUNCTIONS */
+	
 	private function _SetRoutes($Delete = FALSE)
         {
 	        foreach ($this->_UrlMapping as $Short => $Real) {
@@ -299,5 +301,19 @@ class VanillaStarterPlugin extends Gdn_Plugin {
 	            }
 	        }   
         }
+        
+        private function _VarDump($Obj)
+        {
+        	echo "<pre>";
+        	var_dump($Obj);
+        	echo "</pre>";
+        }
+
+        private function _PrintR($Obj)
+        {
+        	echo "<pre>";
+        	print_r($Obj);
+        	echo "</pre>";
+    	}
 
 }
