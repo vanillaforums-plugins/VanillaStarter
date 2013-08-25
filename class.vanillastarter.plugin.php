@@ -40,6 +40,10 @@ $PluginInfo['VanillaStarter'] = array(
 	);
 
 class VanillaStarterPlugin extends Gdn_Plugin {
+	// if TRUE, every call to _Echo, _VarDump, _PrintR will produce output
+        private $_Debug = FALSE;
+        // if TRUE, it will allow enabling debug passing Debug=TRUE to the request
+        private $_DynamicDebug = FALSE;
 	
 	private $_UrlMapping = array(
 		//Auto create on enable (and delete on disable) these routes
@@ -68,10 +72,12 @@ class VanillaStarterPlugin extends Gdn_Plugin {
 	* @param $Sender Sending controller instance
 	*/
 	public function Base_Render_Before($Sender) {
+		// add this call where you prefer, keep in mind the "vanilla execution flow"
+		$this->_DebugSwitcher($Sender); 
 		$Sender->AddCssFile('example.css');
 		$Sender->AddJsFile('example.js');
 	}
-
+	
 	/**
 	* Create a method called "Example" on the PluginController
 	*
@@ -86,6 +92,7 @@ class VanillaStarterPlugin extends Gdn_Plugin {
 	* @param $Sender Sending controller instance
 	*/
 	public function PluginController_Example_Create($Sender) {
+		$this->_DebugSwitcher($Sender);//this will work for every mini-controller action
 	/*
 	 * If you build your views properly, this will be used as the <title> for your page, and for the header
 	 * in the dashboard. Something like this works well: <h1><?php echo T($this->Data['Title']); ?></h1>
@@ -311,18 +318,39 @@ class VanillaStarterPlugin extends Gdn_Plugin {
 	        }   
         }
         
+       	private function _DebugSwitcher($Sender)
+	{
+		/**
+		 * Dynamically enable debug
+		 */ 
+		if($this->_DynamicDebug && $Sender->Request && $Sender->Request->Get('Debug', FALSE)) {
+        		 $this->_Debug = TRUE;
+        	}	
+	}
+        
+        private function _Echo($String)
+        {
+		if($this->_Debug) {
+        		echo $String;
+		}
+    	}
+        
         private function _VarDump($Obj)
         {
-        	echo "<pre>";
-        	var_dump($Obj);
-        	echo "</pre>";
+        	if($this->_Debug) {
+        		echo "<pre>";
+        		var_dump($Obj);
+        		echo "</pre>";
+		}
         }
 
         private function _PrintR($Obj)
         {
-        	echo "<pre>";
-        	print_r($Obj);
-        	echo "</pre>";
+        	if($this->_Debug) {
+        		echo "<pre>";
+        		print_r($Obj);
+        		echo "</pre>";
+        	}
     	}
 
 }
