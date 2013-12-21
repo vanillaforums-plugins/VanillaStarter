@@ -52,7 +52,7 @@ class VanillaStarterPlugin extends Gdn_Plugin {
      * 
      * @var array
      */
-    private $_UrlMapping = array(
+    protected $UrlMapping = array(
         'AnotherAction' => 'plugin/Example/AnotherAction',
         'MyGreatAction' => 'plugin/Example/MyGreatAction'
     );
@@ -84,7 +84,7 @@ class VanillaStarterPlugin extends Gdn_Plugin {
         SaveToConfig('Plugin.Example.TrimSize', 100);
         SaveToConfig('Plugin.Example.RenderCondition', 'all');
 
-        $this->_SetRoutes(); // Auto URLs mapping
+        $this->SetRoutes(); // Auto URLs mapping
 
         // Create table GDN_Example, if it doesn't already exist
         Gdn::Structure()
@@ -112,7 +112,7 @@ class VanillaStarterPlugin extends Gdn_Plugin {
         RemoveFromConfig('Plugin.Example.TrimSize');
         RemoveFromConfig('Plugin.Example.RenderCondition');
 
-        $this->_SetRoutes(TRUE);
+        $this->SetRoutes(TRUE);
     }
     
     /**
@@ -131,9 +131,9 @@ class VanillaStarterPlugin extends Gdn_Plugin {
      * 
      * @param boolean $Delete If TRUE, the routes will be deleted
      */
-    private function _SetRoutes($Delete = FALSE)
+    protected function SetRoutes($Delete = FALSE)
     {
-        foreach ($this->_UrlMapping as $Short => $Real) {
+        foreach ($this->UrlMapping as $Short => $Real) {
             $MatchRoute = Gdn::Router()->MatchRoute('^'.$Short.'(/?.*)$');
 
             if ($MatchRoute && $Delete) {
