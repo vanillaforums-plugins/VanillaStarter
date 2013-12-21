@@ -53,8 +53,8 @@ class VanillaStarterPlugin extends Gdn_Plugin {
      * @var array
      */
     private $_UrlMapping = array(
-        // 'AnotherAction' => 'plugin/Example/AnotherAction',
-        // 'MyGreatAction' => 'plugin/Example/MyGreatAction'
+        'AnotherAction' => 'plugin/Example/AnotherAction',
+        'MyGreatAction' => 'plugin/Example/MyGreatAction'
     );
 
     /**
@@ -87,17 +87,17 @@ class VanillaStarterPlugin extends Gdn_Plugin {
         $this->_SetRoutes(); // Auto URLs mapping
 
         // Create table GDN_Example, if it doesn't already exist
-        // Gdn::Structure()
-        //     ->Table('Example')
-        //     ->PrimaryKey('ExampleID')
-        //     ->Column('Name', 'varchar(255)')
-        //     ->Column('Type', 'varchar(128)')
-        //     ->Column('Size', 'int(11)')
-        //     ->Column('InsertUserID', 'int(11)')
-        //     ->Column('DateInserted', 'datetime')
-        //     ->Column('ForeignID', 'int(11)', TRUE)
-        //     ->Column('ForeignTable', 'varchar(24)', TRUE)
-        //     ->Set(FALSE, FALSE);
+        Gdn::Structure()
+            ->Table('Example')
+            ->PrimaryKey('ExampleID')
+            ->Column('Name', 'varchar(255)')
+            ->Column('Type', 'varchar(128)')
+            ->Column('Size', 'int(11)')
+            ->Column('InsertUserID', 'int(11)')
+            ->Column('DateInserted', 'datetime')
+            ->Column('ForeignID', 'int(11)', TRUE)
+            ->Column('ForeignTable', 'varchar(24)', TRUE)
+            ->Set(FALSE, FALSE);
     }
 
     /**
