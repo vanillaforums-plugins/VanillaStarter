@@ -1,3 +1,3 @@
-$(function(){
-   /* Do some javascripts on page load! */
+jQuery(function ($) {
+    // Do some javascripts on page load!
 });
